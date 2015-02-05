@@ -7,6 +7,7 @@ import com.dota2.proto.Demo;
 import com.dota2.proto.DotaUsermessages;
 import com.dota2.proto.Netmessages;
 import com.dota2.proto.Networkbasetypes;
+import com.dota2.proto.Usermessages;
 
 public class Profile {
 
@@ -91,6 +92,11 @@ public class Profile {
         .append(
             DotaUsermessages.CDOTAUserMsg_ChatEvent.class
         );
+        
+    public static Profile ALL_CHAT = new Profile()
+        .dependsOn(USERMESSAGE_CONTAINER)
+        .append(
+        Usermessages.CUserMsg_SayText2.class);
 
     public static Profile ALL = new Profile() {
         @Override
